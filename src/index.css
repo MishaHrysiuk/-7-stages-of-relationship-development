@@ -1,13 +1,120 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text: #0a111f;
+  --background: #f3f6fc;
+  --primary: #3b77de;
+  --secondary: #7da6f2;
+  --accent: #4986f8;
+
+  --text-50: #ecf0f9;
+  --text-100: #d8e1f3;
+  --text-200: #b2c3e6;
+  --text-300: #8ba5da;
+  --text-400: #6588cd;
+  --text-500: #3e6ac1;
+  --text-600: #32559a;
+  --text-700: #253f74;
+  --text-800: #192a4d;
+  --text-900: #0c1527;
+  --text-950: #060b13;
+
+  --background-50: #ebf0fa;
+  --background-100: #d6e0f5;
+  --background-200: #adc2eb;
+  --background-300: #85a3e0;
+  --background-400: #5c85d6;
+  --background-500: #3366cc;
+  --background-600: #2952a3;
+  --background-700: #1f3d7a;
+  --background-800: #142952;
+  --background-900: #0a1429;
+  --background-950: #050a14;
+
+  --primary-50: #e9f0fb;
+  --primary-100: #d3e1f8;
+  --primary-200: #a8c2f0;
+  --primary-300: #7ca4e9;
+  --primary-400: #5186e1;
+  --primary-500: #2567da;
+  --primary-600: #1e53ae;
+  --primary-700: #163e83;
+  --primary-800: #0f2957;
+  --primary-900: #07152c;
+  --primary-950: #040a16;
+
+  --secondary-50: #e8effd;
+  --secondary-100: #d1dffa;
+  --secondary-200: #a2bff6;
+  --secondary-300: #74a0f1;
+  --secondary-400: #4580ed;
+  --secondary-500: #1760e8;
+  --secondary-600: #124dba;
+  --secondary-700: #0e3a8b;
+  --secondary-800: #09265d;
+  --secondary-900: #05132e;
+  --secondary-950: #020a17;
+
+  --accent-50: #e6effe;
+  --accent-100: #cedefd;
+  --accent-200: #9dbefb;
+  --accent-300: #6b9dfa;
+  --accent-400: #3a7df8;
+  --accent-500: #095cf6;
+  --accent-600: #074ac5;
+  --accent-700: #053794;
+  --accent-800: #042562;
+  --accent-900: #021231;
+  --accent-950: #010919;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  background: var(--background);
 }
+
+body {
+  font-family: Rubik, sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 3.366rem; /* 53.92px */
+}
+
+h2 {
+  font-size: 2.525rem; /* 40.32px */
+}
+
+h3 {
+  font-size: 1.894rem; /* 30.24px */
+}
+
+h4 {
+  font-size: 1.421rem; /* 22.72px */
+}
+
+h5 {
+  font-size: 1.066rem; /* 17.12px */
+}
+
+small {
+  font-size: 0.6rem; /* 9.6px */
+}
+
+.color-effect {
+  background: linear-gradient(120deg, var(--primary), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
