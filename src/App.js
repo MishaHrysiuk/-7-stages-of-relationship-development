@@ -1,18 +1,31 @@
 import React from "react";
 import { Accordion, AccordionItem, Card, CardBody } from "@nextui-org/react";
+import WavingHandIcon from "./icons/WavingHandIcon";
+import DiamondIcon from "./icons/DiamondIcon";
+import StarsIcon from "./icons/StarsIcon";
+import WarningIcon from "./icons/WarningIcon";
+import PrayIcon from "./icons/PrayIcon";
+import GroupIcon from "./icons/GroupIcon";
+import BookIcon from "./icons/BookIcon";
 
 //1)waving_hand
+//2)sentiment_very_satisfied
+//3)communication
+//4)volunteer_activism
+//5)heart_check
+//6)settings_heart
+//7)shield_with_heart
 
 export default function App() {
-  const defaultContent =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-
   return (
     <>
-      <h2 className="m-2.5 text-center tracking-tight">
-        7 етапів розвитку стосунків які ведуть до створення сім’ї
+      <h2 className="m-2.5 mb-0 text-center tracking-tight font-medium color-effect">
+        7 ЕТАПІВ РОЗВИТКУ СТОСУНКІВ
       </h2>
-      <Card className="m-2 bg-[var(--secondary-300)]">
+      <h4 className="mb-4 text-center font-medium">
+        які ведуть до створення сім’ї
+      </h4>
+      <Card className="m-2 bg-[var(--primary-200)]">
         <CardBody className="flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +40,8 @@ export default function App() {
             </g>
             <g>
               <g>
+                - подібно до того що сіється насіння, не означає що обов’язково
+                що
                 <path d="M13.02,19.93v2.02c2.01-0.2,3.84-1,5.32-2.21l-1.42-1.43C15.81,19.17,14.48,19.75,13.02,19.93z" />
                 <path d="M4.03,12c0-4.05,3.03-7.41,6.95-7.93V2.05C5.95,2.58,2.03,6.84,2.03,12c0,5.16,3.92,9.42,8.95,9.95v-2.02 C7.06,19.41,4.03,16.05,4.03,12z" />
                 <path d="M19.95,11h2.02c-0.2-2.01-1-3.84-2.21-5.32l-1.43,1.43C19.19,8.21,19.77,9.54,19.95,11z" />
@@ -36,7 +51,7 @@ export default function App() {
               </g>
             </g>
           </svg>
-          <p className="m-2.5 text-justify bg-[var(--secondary-300)]">
+          <p className="m-2.5 text-justify">
             Коли ми вирушаємо у невідому місцевість, то на допомогу, щоб не
             заблукати і дістатись до пункту призначення, ми використовуємо
             карту, або GPS-навігатор. Даний матеріал може послужити подібним
@@ -50,15 +65,96 @@ export default function App() {
         </CardBody>
       </Card>
 
-      <Accordion variant="splitted">
-        <AccordionItem key="1" aria-label="Accordion 1" title="Знайомство">
-          {defaultContent}
-        </AccordionItem>
-        <AccordionItem key="2" aria-label="Accordion 2" title="Accordion 2">
-          {defaultContent}
-        </AccordionItem>
-        <AccordionItem key="3" aria-label="Accordion 3" title="Accordion 3">
-          {defaultContent}
+      <Accordion
+        variant="splitted"
+        itemClasses={{ base: "bg-[var(--primary-100)]", title: "font-medium" }}
+      >
+        <AccordionItem
+          key="1"
+          aria-label="Accordion 1"
+          startContent={<WavingHandIcon size="36px" color="var(--text )" />}
+          title="1 Етап. Знайомство."
+        >
+          <div className="mb-10 flex flex-col items-center	">
+            <DiamondIcon
+              className="text-center"
+              size="46px"
+              color="var(--text)"
+            />
+            <h5 className="text-center my-3">Цінність етапу</h5>
+            <ul>
+              <li>з цього все розпочинається...</li>
+              <li>
+                подібно до того що сіється насіння, не означає що обов’язково
+                щось виросте, але без сіяння не буває урожаю
+              </li>
+            </ul>
+          </div>
+          <div className="mb-10 flex flex-col items-center	">
+            <StarsIcon
+              className="text-center"
+              size="46px"
+              color="var(--text)"
+            />
+            <h5 className="text-center my-3">Особливості етапу</h5>
+            <ul>
+              <li>
+                Бог дав величезні можливості для знайомства - територія -
+                інструменти
+              </li>
+              <li>
+                Головні правила знайомства 1. Щиро цікався людиною 2. Дозвіл на
+                подальше спілкування
+              </li>
+            </ul>
+          </div>
+          <div className="mb-10 flex flex-col items-center	">
+            <WarningIcon
+              className="text-center"
+              size="46px"
+              color="var(--text)"
+            />
+            <h5 className="text-center my-3">Небезпеки етапу</h5>
+            <ul>
+              <li>намагатись познайомитись з великою кількістю</li>
+              <li>не бути самим собою</li>
+              <li>страх перед людьми</li>
+              <li>нездорові знайомства, які можуть бути небезпечні </li>
+            </ul>
+          </div>
+          <div className="mb-10 flex flex-col items-center	">
+            <PrayIcon className="text-center" size="46px" color="var(--text)" />
+            <h5 className="text-center my-3">Молитви на цьому етапі</h5>
+            <ul>
+              <li>Господи направляй мене...</li>
+              <li>Господи, дай бути уважним</li>
+            </ul>
+          </div>
+          <div className="mb-10 flex flex-col items-center	">
+            <BookIcon className="text-center" size="46px" color="var(--text)" />
+            <h5 className="text-center my-3">Біблійний приклад</h5>
+            <ul>
+              <li>
+                Історія Рут. “Випадок привів її на ділянку поля Боаза...” Рут
+                2:3
+              </li>
+            </ul>
+          </div>
+          <div className="mb-10 flex flex-col items-center	">
+            <GroupIcon
+              className="text-center"
+              size="46px"
+              color="var(--text)"
+            />
+            <h5 className="text-center my-3">Для обговорення з друзями</h5>
+            <ul>
+              <li>
+                <a href="https://bogvideo.com/movies/kniga-ruf-puteshestvie-veryi-the-book-of-ruth-journey-of-faith/">
+                  Фільм Рут
+                </a>
+              </li>
+            </ul>
+          </div>
         </AccordionItem>
       </Accordion>
     </>
