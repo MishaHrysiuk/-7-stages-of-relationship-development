@@ -25,7 +25,7 @@ export default function App() {
       <h4 className="mb-4 text-center font-medium">
         які ведуть до створення сім’ї
       </h4>
-      <Card className="m-2 bg-[var(--primary-200)]">
+      <Card className="m-2 bg-[var(--primary-400)]">
         <CardBody className="flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,20 +67,22 @@ export default function App() {
 
       <Accordion
         variant="splitted"
-        itemClasses={{ base: "bg-[var(--primary-100)]", title: "font-medium" }}
+        itemClasses={{
+          base: "bg-[var(--primary-300)]",
+          title: "font-medium text-[var(--text)]",
+          indicator: "text-[var(--primary)]",
+        }}
       >
         <AccordionItem
           key="1"
           aria-label="Accordion 1"
-          startContent={<WavingHandIcon size="36px" color="var(--text )" />}
+          startContent={<WavingHandIcon size="36px" color="var(--text)" />}
           title="1 Етап. Знайомство."
         >
           <div className="mb-10 flex flex-col items-center	">
-            <DiamondIcon
-              className="text-center"
-              size="46px"
-              color="var(--text)"
-            />
+            <div className="rounded-full bg-[var(--primary)]">
+              <DiamondIcon className="m-2" size="46px" color="cyan" />
+            </div>
             <h5 className="text-center my-3">Цінність етапу</h5>
             <ul>
               <li>з цього все розпочинається...</li>
@@ -90,12 +92,10 @@ export default function App() {
               </li>
             </ul>
           </div>
-          <div className="mb-10 flex flex-col items-center	">
-            <StarsIcon
-              className="text-center"
-              size="46px"
-              color="var(--text)"
-            />
+          <div className="mb-10 flex flex-col items-center">
+            <div className="rounded-full bg-[var(--primary)]">
+              <StarsIcon className="m-2" size="46px" color="yellow" />
+            </div>
             <h5 className="text-center my-3">Особливості етапу</h5>
             <ul>
               <li>
@@ -109,11 +109,9 @@ export default function App() {
             </ul>
           </div>
           <div className="mb-10 flex flex-col items-center	">
-            <WarningIcon
-              className="text-center"
-              size="46px"
-              color="var(--text)"
-            />
+            <div className="rounded-full bg-[var(--primary-200)]">
+              <WarningIcon className="m-2" size="46px" color="red" />
+            </div>
             <h5 className="text-center my-3">Небезпеки етапу</h5>
             <ul>
               <li>намагатись познайомитись з великою кількістю</li>
@@ -123,7 +121,10 @@ export default function App() {
             </ul>
           </div>
           <div className="mb-10 flex flex-col items-center	">
-            <PrayIcon className="text-center" size="46px" color="var(--text)" />
+            <div className="rounded-full bg-[var(--primary-200)]">
+              <PrayIcon className="m-2" size="46px" color="blue" />
+            </div>
+
             <h5 className="text-center my-3">Молитви на цьому етапі</h5>
             <ul>
               <li>Господи направляй мене...</li>
@@ -131,7 +132,9 @@ export default function App() {
             </ul>
           </div>
           <div className="mb-10 flex flex-col items-center	">
-            <BookIcon className="text-center" size="46px" color="var(--text)" />
+            <div className="rounded-full bg-[var(--primary-200)]">
+              <BookIcon className="m-2" size="46px" color="chocolate" />
+            </div>
             <h5 className="text-center my-3">Біблійний приклад</h5>
             <ul>
               <li>
@@ -141,11 +144,9 @@ export default function App() {
             </ul>
           </div>
           <div className="mb-10 flex flex-col items-center	">
-            <GroupIcon
-              className="text-center"
-              size="46px"
-              color="var(--text)"
-            />
+            <div className="rounded-full bg-[var(--primary-200)]">
+              <GroupIcon className="m-2" size="46px" color="forestgreen" />
+            </div>
             <h5 className="text-center my-3">Для обговорення з друзями</h5>
             <ul>
               <li>

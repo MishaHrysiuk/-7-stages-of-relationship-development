@@ -123,6 +123,11 @@ ul li::before {
   margin-right: 5px;
 }
 
+li li::before {
+  content: "•-";
+  margin-right: 5px;
+}
+
 a:link {
   color: var(--secondary-500);
   text-decoration: underline;
