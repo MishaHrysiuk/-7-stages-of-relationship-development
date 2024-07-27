@@ -7,6 +7,8 @@ import WarningIcon from "./icons/WarningIcon";
 import PrayIcon from "./icons/PrayIcon";
 import GroupIcon from "./icons/GroupIcon";
 import BookIcon from "./icons/BookIcon";
+import AccordionItemCustom from "./AccordionItemCustom";
+import data from "./data.json";
 
 //1)waving_hand
 //2)sentiment_very_satisfied
@@ -40,8 +42,6 @@ export default function App() {
             </g>
             <g>
               <g>
-                - подібно до того що сіється насіння, не означає що обов’язково
-                що
                 <path d="M13.02,19.93v2.02c2.01-0.2,3.84-1,5.32-2.21l-1.42-1.43C15.81,19.17,14.48,19.75,13.02,19.93z" />
                 <path d="M4.03,12c0-4.05,3.03-7.41,6.95-7.93V2.05C5.95,2.58,2.03,6.84,2.03,12c0,5.16,3.92,9.42,8.95,9.95v-2.02 C7.06,19.41,4.03,16.05,4.03,12z" />
                 <path d="M19.95,11h2.02c-0.2-2.01-1-3.84-2.21-5.32l-1.43,1.43C19.19,8.21,19.77,9.54,19.95,11z" />
@@ -68,95 +68,22 @@ export default function App() {
       <Accordion
         variant="splitted"
         itemClasses={{
-          base: "bg-[var(--primary-300)]",
+          base: "bg-[var(--primary-200)]",
           title: "font-medium text-[var(--text)]",
           indicator: "text-[var(--primary)]",
         }}
       >
-        <AccordionItem
-          key="1"
-          aria-label="Accordion 1"
-          startContent={<WavingHandIcon size="36px" color="var(--text)" />}
-          title="1 Етап. Знайомство."
-        >
-          <div className="mb-10 flex flex-col items-center	">
-            <div className="rounded-full bg-[var(--primary)]">
-              <DiamondIcon className="m-2" size="46px" color="cyan" />
-            </div>
-            <h5 className="text-center my-3">Цінність етапу</h5>
-            <ul>
-              <li>з цього все розпочинається...</li>
-              <li>
-                подібно до того що сіється насіння, не означає що обов’язково
-                щось виросте, але без сіяння не буває урожаю
-              </li>
-            </ul>
-          </div>
-          <div className="mb-10 flex flex-col items-center">
-            <div className="rounded-full bg-[var(--primary)]">
-              <StarsIcon className="m-2" size="46px" color="yellow" />
-            </div>
-            <h5 className="text-center my-3">Особливості етапу</h5>
-            <ul>
-              <li>
-                Бог дав величезні можливості для знайомства - територія -
-                інструменти
-              </li>
-              <li>
-                Головні правила знайомства 1. Щиро цікався людиною 2. Дозвіл на
-                подальше спілкування
-              </li>
-            </ul>
-          </div>
-          <div className="mb-10 flex flex-col items-center	">
-            <div className="rounded-full bg-[var(--primary-200)]">
-              <WarningIcon className="m-2" size="46px" color="red" />
-            </div>
-            <h5 className="text-center my-3">Небезпеки етапу</h5>
-            <ul>
-              <li>намагатись познайомитись з великою кількістю</li>
-              <li>не бути самим собою</li>
-              <li>страх перед людьми</li>
-              <li>нездорові знайомства, які можуть бути небезпечні </li>
-            </ul>
-          </div>
-          <div className="mb-10 flex flex-col items-center	">
-            <div className="rounded-full bg-[var(--primary-200)]">
-              <PrayIcon className="m-2" size="46px" color="blue" />
-            </div>
-
-            <h5 className="text-center my-3">Молитви на цьому етапі</h5>
-            <ul>
-              <li>Господи направляй мене...</li>
-              <li>Господи, дай бути уважним</li>
-            </ul>
-          </div>
-          <div className="mb-10 flex flex-col items-center	">
-            <div className="rounded-full bg-[var(--primary-200)]">
-              <BookIcon className="m-2" size="46px" color="chocolate" />
-            </div>
-            <h5 className="text-center my-3">Біблійний приклад</h5>
-            <ul>
-              <li>
-                Історія Рут. “Випадок привів її на ділянку поля Боаза...” Рут
-                2:3
-              </li>
-            </ul>
-          </div>
-          <div className="mb-10 flex flex-col items-center	">
-            <div className="rounded-full bg-[var(--primary-200)]">
-              <GroupIcon className="m-2" size="46px" color="forestgreen" />
-            </div>
-            <h5 className="text-center my-3">Для обговорення з друзями</h5>
-            <ul>
-              <li>
-                <a href="https://bogvideo.com/movies/kniga-ruf-puteshestvie-veryi-the-book-of-ruth-journey-of-faith/">
-                  Фільм Рут
-                </a>
-              </li>
-            </ul>
-          </div>
-        </AccordionItem>
+        {data.map((item) => {
+          return (
+            <AccordionItem
+              key={item.number}
+              startContent={<WavingHandIcon size="36px" color="var(--text)" />}
+              title={`${item.number} Етап. ${item.title}.`}
+            >
+              <AccordionItemCustom content={item.content} />
+            </AccordionItem>
+          );
+        })}
       </Accordion>
     </>
   );

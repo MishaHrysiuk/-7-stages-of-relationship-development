@@ -124,8 +124,12 @@ ul li::before {
 }
 
 li li::before {
-  content: "•-";
+  content: "-";
   margin-right: 5px;
+}
+
+ul ul {
+  padding-inline-start: 40px;
 }
 
 a:link {
