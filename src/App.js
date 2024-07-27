@@ -1,6 +1,7 @@
 import React from "react";
 import { Accordion, AccordionItem, Card, CardBody } from "@nextui-org/react";
 import WavingHandIcon from "./icons/WavingHandIcon";
+import SentimentVerySatisfiedIcon from "./icons/SentimentVerySatisfiedIcon";
 import DiamondIcon from "./icons/DiamondIcon";
 import StarsIcon from "./icons/StarsIcon";
 import WarningIcon from "./icons/WarningIcon";
@@ -17,6 +18,17 @@ import data from "./data.json";
 //5)heart_check
 //6)settings_heart
 //7)shield_with_heart
+
+const returnIcon = (title) => {
+  switch (title) {
+    case "Знайомство":
+      return <WavingHandIcon size="36px" color="var(--text)" />;
+    case "Симпатія":
+      return <SentimentVerySatisfiedIcon size="36px" color="var(--text)" />;
+    default:
+      return null;
+  }
+};
 
 export default function App() {
   return (
@@ -77,7 +89,7 @@ export default function App() {
           return (
             <AccordionItem
               key={item.number}
-              startContent={<WavingHandIcon size="36px" color="var(--text)" />}
+              startContent={returnIcon(item.title)}
               title={`${item.number} Етап. ${item.title}.`}
             >
               <AccordionItemCustom content={item.content} />
