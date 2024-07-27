@@ -25,17 +25,46 @@ const returnIcon = (title) => {
   }
 };
 
+const compileData = (data) => {
+  console.log(data);
+  switch (data.type) {
+    case "card_list":
+      return (
+        <div className="mb-10 flex flex-col items-center">
+          {returnIcon(data.title)}
+          <h5 className="text-center my-3">{data.title}</h5>
+          <ul>
+            {data.content.map((item, index) => {
+              return <li key={index}>{compileData(item)}</li>;
+            })}
+          </ul>
+        </div>
+      );
+    case "list":
+      return (
+        <>
+          {data.title}
+          <ul>
+            {data.content.map((item, index) => {
+              return <li key={index}>{compileData(item)}</li>;
+            })}
+          </ul>
+        </>
+      );
+    case "link":
+      return <a href={data.ref}>{data.content}</a>;
+    case "text":
+      return data.content;
+    default:
+      return null;
+  }
+};
+
 const AccordionItemCustom = ({ content }) => {
   return (
     <Fragment>
-      {content.map((x) => {
-        return (
-          <div className="mb-10 flex flex-col items-center">
-            {returnIcon(x.title)}
-            <h5 className="text-center my-3">{x.title}</h5>
-            {""}
-          </div>
-        );
+      {content.map((x, index) => {
+        return compileData(x);
       })}
     </Fragment>
   );
