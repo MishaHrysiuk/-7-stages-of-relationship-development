@@ -2,12 +2,11 @@ import React from "react";
 import { Accordion, AccordionItem, Card, CardBody } from "@nextui-org/react";
 import WavingHandIcon from "./icons/WavingHandIcon";
 import SentimentVerySatisfiedIcon from "./icons/SentimentVerySatisfiedIcon";
-import DiamondIcon from "./icons/DiamondIcon";
-import StarsIcon from "./icons/StarsIcon";
-import WarningIcon from "./icons/WarningIcon";
-import PrayIcon from "./icons/PrayIcon";
-import GroupIcon from "./icons/GroupIcon";
-import BookIcon from "./icons/BookIcon";
+import CommunicationIcon from "./icons/CommunicationIcon";
+import VolunteerAcivismIcon from "./icons/VolunteerAcivismIcon";
+import HeartCheckIcon from "./icons/HeartCheckIcon";
+import SettingsHeartIcon from "./icons/SettingsHeartIcon";
+import ShieldWithHeartIcon from "./icons/ShieldWithHeartIcon";
 import AccordionItemCustom from "./AccordionItemCustom";
 import data from "./data.json";
 
@@ -22,9 +21,21 @@ import data from "./data.json";
 const returnIcon = (title) => {
   switch (title) {
     case "Знайомство":
-      return <WavingHandIcon size="36px" color="var(--text)" />;
+      return <WavingHandIcon size="36px" color="var(--primary-600)" />;
     case "Симпатія":
-      return <SentimentVerySatisfiedIcon size="36px" color="var(--text)" />;
+      return (
+        <SentimentVerySatisfiedIcon size="36px" color="var(--primary-600)" />
+      );
+    case "Залицяння":
+      return <CommunicationIcon size="36px" color="var(--primary-600)" />;
+    case "Пропозиція":
+      return <VolunteerAcivismIcon size="36px" color="var(--primary-600)" />;
+    case "Спільне рішення":
+      return <HeartCheckIcon size="36px" color="var(--primary-600)" />;
+    case "Заручини":
+      return <SettingsHeartIcon size="36px" color="var(--primary-600)" />;
+    case "Шлюб":
+      return <ShieldWithHeartIcon size="36px" color="var(--primary-600)" />;
     default:
       return null;
   }
@@ -39,7 +50,7 @@ export default function App() {
       <h4 className="mb-4 text-center font-medium">
         які ведуть до створення сім’ї
       </h4>
-      <Card className="m-2 bg-[var(--primary-400)]">
+      <Card className="m-2 bg-[var(--secondary-300)]">
         <CardBody className="flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -64,15 +75,15 @@ export default function App() {
             </g>
           </svg>
           <p className="m-2.5 text-justify">
-            Коли ми вирушаємо у невідому місцевість, то на допомогу, щоб не
-            заблукати і дістатись до пункту призначення, ми використовуємо
-            карту, або GPS-навігатор. Даний матеріал може послужити подібним
-            дороговказом для молоді у їх подорожі до повноцінного дорослого
-            життя і щасливого шлюбу. Згідно спостережень за розвитком стосунків
-            тих людей, які вже дістались до цієї мети, можна прослідкувати, що
-            вони проходили ряд етапів розвитку цих стосунків. Отож, пропонуємо
-            детально поглянути на сім етапів, як зазвичай розвиваються стосунки
-            між хлопцями і дівчатами, які ведуть до утворення сім’ї.
+            Коли ми вирушаємо у невідому місцевість, щоб не заблукати і
+            дістатись до пункту призначення, ми використовуємо карту, або
+            GPS-навігатор. Даний матеріал може послужити подібним дороговказом
+            для молоді у їх подорожі до повноцінного дорослого життя і щасливого
+            шлюбу. Згідно спостережень за розвитком стосунків тих людей, які вже
+            дістались до цієї мети, можна прослідкувати, що вони проходили ряд
+            етапів розвитку цих стосунків. Отож, пропонуємо детально поглянути
+            на сім етапів, як зазвичай, розвиваються стосунки між хлопцями і
+            дівчатами та ведуть до утворення сім’ї.
           </p>
         </CardBody>
       </Card>
@@ -81,7 +92,7 @@ export default function App() {
         variant="splitted"
         itemClasses={{
           base: "bg-[var(--primary-200)]",
-          title: "font-medium text-[var(--text)]",
+          title: "font-medium text-[var(--primary-600)]",
           indicator: "text-[var(--primary)]",
         }}
       >

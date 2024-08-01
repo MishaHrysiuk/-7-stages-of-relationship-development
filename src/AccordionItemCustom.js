@@ -62,49 +62,10 @@ const compileData = (data) => {
 
 const AccordionItemCustom = ({ content }) => {
   return (
-    <Fragment>
-      {content.map((x, index) => {
+    <>
+      {content.map((x) => {
         return compileData(x);
       })}
-    </Fragment>
-  );
-  return (
-    <>
-      <div className="mb-10 flex flex-col items-center">
-        {/* <div className="rounded-full bg-[var(--primary)]"> */}
-        <StarsIcon className="m-2" size="46px" color="yellow" />
-        {/* </div> */}
-        <h5 className="text-center my-3">Особливості етапу</h5>
-        <ul>
-          <li>
-            Бог дав величезні можливості для знайомства:
-            <ul>
-              <li>Територія</li>
-              <li>Інструменти</li>
-            </ul>
-          </li>
-          <li>
-            Головні правила знайомства:
-            <ul>
-              <li>Щиро цікався людиною</li>
-              <li>Дозвіл на подальше спілкування</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div className="mb-10 flex flex-col items-center	">
-        <div className="rounded-full bg-[var(--primary-200)]">
-          <GroupIcon className="m-2" size="46px" color="forestgreen" />
-        </div>
-        <h5 className="text-center my-3">Для обговорення з друзями</h5>
-        <ul>
-          <li>
-            <a href="https://bogvideo.com/movies/kniga-ruf-puteshestvie-veryi-the-book-of-ruth-journey-of-faith/">
-              Фільм Рут
-            </a>
-          </li>
-        </ul>
-      </div>
     </>
   );
 };
