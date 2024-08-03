@@ -1,10 +1,9 @@
-import React from "react";
-import DiamondIcon from "./icons/DiamondIcon";
-import StarsIcon from "./icons/StarsIcon";
-import WarningIcon from "./icons/WarningIcon";
-import PrayIcon from "./icons/PrayIcon";
-import GroupIcon from "./icons/GroupIcon";
-import BookIcon from "./icons/BookIcon";
+import DiamondIcon from "../icons/DiamondIcon";
+import StarsIcon from "../icons/StarsIcon";
+import WarningIcon from "../icons/WarningIcon";
+import PrayIcon from "../icons/PrayIcon";
+import GroupIcon from "../icons/GroupIcon";
+import BookIcon from "../icons/BookIcon";
 
 const returnIcon = (title) => {
     switch (title) {
@@ -27,20 +26,25 @@ const returnIcon = (title) => {
     }
 };
 
-const compileData = (data) => {
+export const compileData = (data) => {
     switch (data.type) {
         case "root":
-            return data.children[0].children.map((item, index) => {
-                return (
-                    <div
-                        key={index}
-                        className="mb-10 flex flex-col items-center"
-                    >
-                        {returnIcon(item.children[0].children[0].value)}
-                        {item.children.map((item) => compileData(item))}
-                    </div>
-                );
-            });
+            if (data.number) {
+                return data.children[0].children.map((item, index) => {
+                    return (
+                        <div
+                            key={index}
+                            className="mb-10 flex flex-col items-center"
+                        >
+                            {returnIcon(item.children[0].children[0].value)}
+                            {item.children.map((item) => compileData(item))}
+                        </div>
+                    );
+                });
+            } else {
+                return <>{data.children.map((item) => compileData(item))}</>;
+            }
+
         case "heading":
             return (
                 <h5 className="text-center my-3">
@@ -61,17 +65,15 @@ const compileData = (data) => {
             }
         case "listItem":
             return <li>{data.children.map((item) => compileData(item))}</li>;
-        // case "link":
-        //     return <a href={data.ref}>{data.content}</a>;
+        case "link":
+            return (
+                <a href={data.url}>
+                    {data.children.map((item) => compileData(item))}
+                </a>
+            );
         case "text":
             return data.value;
         default:
             return null;
     }
 };
-
-const AccordionItemCustom = ({ content }) => {
-    return compileData(content);
-};
-
-export default AccordionItemCustom;
