@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fromMarkdown } from "mdast-util-from-markdown";
+import { compileData } from "./handlers/markdownCompiler";
 
 import stage1 from "./data/Знайомство.md";
 import stage2 from "./data/Симпатія.md";
@@ -17,7 +18,6 @@ import PointIcon from "./icons/PointIcon";
 import Title from "./components/Title";
 import CustomCard from "./components/CustomCard";
 import CustomAccordion from "./components/CustomAccordion";
-import { compileData } from "./handlers/markdownCompiler";
 
 export default function App() {
     const [introduction, setIntroduction] = useState({});
@@ -56,7 +56,11 @@ export default function App() {
     return (
         <>
             <Title />
-            <CustomCard Icon={PointIcon} text={compileData(introduction)} />
+            <CustomCard
+                Icon={PointIcon}
+                text={compileData(introduction)}
+                ending={false}
+            />
             <CustomAccordion
                 items={[
                     { ...data1, name: "Знайомство", number: 1 },
@@ -70,7 +74,8 @@ export default function App() {
             />
             <CustomCard
                 Icon={DescriptionIcon}
-                text={compileData(introduction)}
+                text={compileData(ending)}
+                ending={true}
             />
         </>
     );
