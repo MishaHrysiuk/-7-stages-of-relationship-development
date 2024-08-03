@@ -45,8 +45,9 @@ const CustomAccordion = ({ items }) => {
                 indicator: "text-[var(--text-700)]",
             }}
         >
-            {items.map((item) => (
+            {items.map((item, index) => (
                 <AccordionItem
+                    key={index}
                     startContent={returnIcon(item.name)}
                     title={`${item.number} Етап. ${item.name}.`}
                 >

@@ -39,7 +39,6 @@ export default function App() {
                 .then((text) => {
                     const tree = fromMarkdown(text);
                     setData(tree);
-                    console.log(tree);
                 });
         }
         fetchData(stage1, setData1);

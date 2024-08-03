@@ -118,6 +118,10 @@ small {
     -webkit-text-fill-color: transparent;
 }
 
+.color {
+    background: linear-gradient(-90deg, var(--primary), var(--accent));
+}
+
 ul {
     list-style-type: disc;
 }
