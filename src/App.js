@@ -115,7 +115,7 @@ export default function App() {
                         </g>
                     </svg>
                     <p className="m-2.5 text-justify">
-                        {introduction.children[0].children[0].value}
+                        {/* {introduction.children[0].children[0].value} */}
                     </p>
                 </CardBody>
             </Card>
@@ -175,7 +175,7 @@ export default function App() {
             <Card className="m-2 bg-[var(--secondary-300)]">
                 <CardBody className="flex items-center">
                     <p className="m-2.5 text-justify">
-                        {ending.children[0].children[0].value}
+                        {/* {ending.children[0].children[0].value} */}
                     </p>
                 </CardBody>
             </Card>
